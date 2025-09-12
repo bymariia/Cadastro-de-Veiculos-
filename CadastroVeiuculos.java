@@ -13,7 +13,7 @@ public class CadastroVeiuculos {
                 1- Cadastrar Veículos
                 2- Listar Veículos
                 3- Excluir Veículos
-                0- Sair
+                
                 """;
         int opcao;
         do {
