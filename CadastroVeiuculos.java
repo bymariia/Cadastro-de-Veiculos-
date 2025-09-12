@@ -13,7 +13,6 @@ public class CadastroVeiuculos {
                 1- Cadastrar Veículos
                 2- Listar Veículos
                 3- Excluir Veículos
-                4- Pesquisar Veículos
                 0- Sair
                 """;
         int opcao;
