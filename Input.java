@@ -29,4 +29,26 @@ public class Input {
             }
         }
     }
+
+    public static int scanAno(String message, Scanner scan) {
+        while (true) {
+            int ano = scanInt(message, scan);
+            if (ano >= 1800 && ano <= 2100) {
+                return ano;
+            } else {
+                System.out.println("Ano inválido! Digite entre 1800 e 2100.");
+            }
+        }
+    }
+
+    public static String scanPlaca(String message, Scanner scan) {
+        while (true) {
+            String placa = scanString(message, scan).toUpperCase();
+            if (placa.matches("^[A-Z]{3}-?\\d{4}$") || placa.matches("^[A-Z]{3}\\d[A-Z]\\d{2}$")) {
+                return placa;
+            } else {
+                System.out.println("Placa inválida! Exemplos: ABC-1234 ou ABC1D23.");
+            }
+        }
+    }
 }

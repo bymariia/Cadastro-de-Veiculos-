@@ -24,23 +24,19 @@ public class CadastroVeiculos {
             switch (opcao) {
                 case 1:
                     cadastraVeiculo();
-                    System.out.println("Pressione enter para continuar.");
-                    scan.nextLine();
+                    pause();
                     break;
                 case 2:
                     listaVeiculos();
-                    System.out.println("Pressione enter para continuar.");
-                    scan.nextLine();
+                    pause();
                     break;
                 case 3:
                     removeVeiculo();
-                    System.out.println("Pressione enter para continuar.");
-                    scan.nextLine();
+                    pause();
                     break;
                 case 4:
                     pesquisarVeiculo();
-                    System.out.println("Pressione enter para continuar.");
-                    scan.nextLine();
+                    pause();
                     break;
                 case 0:
                     System.out.println("Volte Sempre!!");
@@ -56,8 +52,8 @@ public class CadastroVeiculos {
         System.out.println("==== ★ Cadastrando novo veículo ★ ====");
         String marca = Input.scanString(" ↪︎ Digite a marca: ", scan);
         String modelo = Input.scanString(" ↪︎ Digite o modelo: ", scan);
-        int ano = Input.scanInt(" ↪︎ Digite o ano: ", scan);
-        String placa = Input.scanString(" ↪︎ Digite a placa: ", scan);
+        int ano = Input.scanAno(" ↪︎ Digite o ano: ", scan);
+        String placa = Input.scanPlaca(" ↪︎ Digite a placa: ", scan);
 
         for (Veiculo v : veiculos) {
             if (v.getPlaca().equalsIgnoreCase(placa)) {
@@ -84,7 +80,7 @@ public class CadastroVeiculos {
 
     static void removeVeiculo() {
         System.out.println("==== ★ Remover Veículo ★ ====");
-        String placa = Input.scanString(" ↪︎ Digite a placa do veículo a remover: ", scan);
+        String placa = Input.scanPlaca(" ↪︎ Digite a placa do veículo a remover: ", scan);
 
         Veiculo encontrado = null;
         for (Veiculo v : veiculos) {
@@ -111,7 +107,7 @@ public class CadastroVeiculos {
 
         switch (tipo) {
             case 1: {
-                String placa = Input.scanString(" ↪︎ Digite a placa: ", scan);
+                String placa = Input.scanPlaca(" ↪︎ Digite a placa: ", scan);
                 boolean achouVeiculo = false;
                 for (Veiculo v : veiculos) {
                     if (v.getPlaca().equalsIgnoreCase(placa)) {
@@ -141,4 +137,9 @@ public class CadastroVeiculos {
         }
     }
 
+    // implementamos a função pause para deixar o código mais limpo e organizado!
+    static void pause(){
+        System.out.println("Pressione enter para continuar.");
+        scan.nextLine();
+    }
 }
