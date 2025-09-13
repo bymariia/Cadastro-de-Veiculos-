@@ -7,20 +7,22 @@ public class CadastroVeiculos {
     static List<Veiculo> veiculos = new ArrayList<>();
 
     public static void main(String[] args) {
-        System.out.println("==== ★ Bem Vindo ao Controle de Frotas das Divas! ★ ====");
+        System.out.println("┌────────────────────────────────────────────┐");
+        System.out.println("| Bem Vindo ao Controle de Frotas das Divas! |");
+        System.out.println("└────────────────────────────────────────────┘");
         String menu = """
                 Escolha uma das opções abaixo:
-                 ↪︎ 1- Cadastrar Veículos
-                 ↪︎ 2- Listar Veículos
-                 ↪︎ 3- Excluir Veículos
-                 ↪︎ 4- Pesquisar Veículo
-                 ↪︎ 0- Sair
+                 >> 1- Cadastrar Veículos
+                 >> 2- Listar Veículos
+                 >> 3- Excluir Veículos
+                 >> 4- Pesquisar Veículo
+                 >> 0- Sair
                 """;
 
         int opcao;
         do {
             System.out.println(menu);
-            opcao = Input.scanInt("✎ Escolha uma opção: ", scan);
+            opcao = Input.scanInt("| Escolha uma opção: ", scan);
             switch (opcao) {
                 case 1:
                     cadastraVeiculo();
@@ -39,7 +41,7 @@ public class CadastroVeiculos {
                     pause();
                     break;
                 case 0:
-                    System.out.println("Volte Sempre!!");
+                    System.out.println("Volte Sempre! :)");
                     break;
                 default:
                     System.out.println("Opção inválida.");
@@ -49,11 +51,11 @@ public class CadastroVeiculos {
     }
 
     static void cadastraVeiculo() {
-        System.out.println("==== ★ Cadastrando novo veículo ★ ====");
-        String marca = Input.scanString(" ↪︎ Digite a marca: ", scan);
-        String modelo = Input.scanString(" ↪︎ Digite o modelo: ", scan);
-        int ano = Input.scanAno(" ↪︎ Digite o ano: ", scan);
-        String placa = Input.scanPlaca(" ↪︎ Digite a placa: ", scan);
+        System.out.println("======== Cadastrando novo veículo ========");
+        String marca = Input.scanString(" >> Digite a marca: ", scan);
+        String modelo = Input.scanString(" >> Digite o modelo: ", scan);
+        int ano = Input.scanAno(" >>  Digite o ano: ", scan);
+        String placa = Input.scanPlaca(" >> Digite a placa: ", scan);
 
         for (Veiculo v : veiculos) {
             if (v.getPlaca().equalsIgnoreCase(placa)) {
@@ -68,7 +70,7 @@ public class CadastroVeiculos {
     }
 
     static void listaVeiculos() {
-        System.out.println("==== ★ Veículos Cadastrados ★ ====");
+        System.out.println("======== Veículos Cadastrados ========");
         if (veiculos.isEmpty()) {
             System.out.println("Nenhum veículo cadastrado.");
             return;
@@ -79,8 +81,8 @@ public class CadastroVeiculos {
     }
 
     static void removeVeiculo() {
-        System.out.println("==== ★ Remover Veículo ★ ====");
-        String placa = Input.scanPlaca(" ↪︎ Digite a placa do veículo a remover: ", scan);
+        System.out.println("======== Remover Veículo ========");
+        String placa = Input.scanPlaca(" >> Digite a placa do veículo a remover: ", scan);
 
         Veiculo encontrado = null;
         for (Veiculo v : veiculos) {
@@ -99,15 +101,15 @@ public class CadastroVeiculos {
     }
 
     static void pesquisarVeiculo() {
-        System.out.println("==== ★ Pesquisar Veículo ★ ====");
-        System.out.println(" ↪︎ 1- Pesquisar por Placa");
-        System.out.println(" ↪︎ 2- Pesquisar por Modelo");
+        System.out.println("======== Pesquisar Veículo ========");
+        System.out.println(" >> 1- Pesquisar por Placa");
+        System.out.println(" >> 2- Pesquisar por Modelo");
 
-        int tipo = Input.scanInt("✎ Escolha uma opção: ", scan);
+        int tipo = Input.scanInt("| Escolha uma opção: ", scan);
 
         switch (tipo) {
             case 1: {
-                String placa = Input.scanPlaca(" ↪︎ Digite a placa: ", scan);
+                String placa = Input.scanPlaca(" >> Digite a placa: ", scan);
                 boolean achouVeiculo = false;
                 for (Veiculo v : veiculos) {
                     if (v.getPlaca().equalsIgnoreCase(placa)) {
@@ -120,7 +122,7 @@ public class CadastroVeiculos {
             }
                 break;
             case 2: {
-                String modelo = Input.scanString(" ↪︎ Digite parte do modelo: ", scan);
+                String modelo = Input.scanString(" >> Digite parte do modelo: ", scan);
                 boolean achouVeiculo = false;
                 for (Veiculo v : veiculos) {
                     if (v.getModelo().toLowerCase().contains(modelo.toLowerCase())) {
@@ -139,7 +141,7 @@ public class CadastroVeiculos {
 
     // implementamos a função pause para deixar o código mais limpo e organizado!
     static void pause(){
-        System.out.println("Pressione enter para continuar.");
+        System.out.println("Pressione enter para continuar...");
         scan.nextLine();
     }
 }

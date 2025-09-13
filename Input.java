@@ -14,7 +14,7 @@ public class Input {
             }
         }
     }
-
+    
     public static String scanString(String message, Scanner scan){
         while (true) {
             System.out.print(message);
@@ -30,6 +30,7 @@ public class Input {
         }
     }
 
+    // observa o ano dentro de um intervalo.
     public static int scanAno(String message, Scanner scan) {
         while (true) {
             int ano = scanInt(message, scan);
@@ -41,6 +42,7 @@ public class Input {
         }
     }
 
+    // lê a placa com validação.
     public static String scanPlaca(String message, Scanner scan) {
         while (true) {
             String placa = scanString(message, scan).toUpperCase();
