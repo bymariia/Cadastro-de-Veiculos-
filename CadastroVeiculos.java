@@ -25,18 +25,22 @@ public class CadastroVeiculos {
             opcao = Input.scanInt("| Escolha uma opção: ", scan);
             switch (opcao) {
                 case 1:
+                    System.out.print("\033[H\033[2J");
                     cadastraVeiculo();
                     pause();
                     break;
                 case 2:
+                    System.out.print("\033[H\033[2J");
                     listaVeiculos();
                     pause();
                     break;
                 case 3:
+                    System.out.print("\033[H\033[2J");
                     removeVeiculo();
                     pause();
                     break;
                 case 4:
+                    System.out.print("\033[H\033[2J");
                     pesquisarVeiculo();
                     pause();
                     break;
@@ -67,6 +71,7 @@ public class CadastroVeiculos {
         Veiculo v = new Veiculo(marca, modelo, ano, placa);
         veiculos.add(v);
         System.out.println("Veículo cadastrado com sucesso!");
+
     }
 
     static void listaVeiculos() {
@@ -140,7 +145,7 @@ public class CadastroVeiculos {
     }
 
     // implementamos a função pause para deixar o código mais limpo e organizado!
-    static void pause(){
+    static void pause() {
         System.out.println("Pressione enter para continuar...");
         scan.nextLine();
     }
