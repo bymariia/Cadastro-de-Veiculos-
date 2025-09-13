@@ -22,11 +22,11 @@ A ideia era pegar o código que estava procedural e transformar em **orientado a
 Quando roda o programa, aparece o menu:
 
 === MENU ===
-1 - Cadastrar Veículo
-2 - Listar Veículos
-3 - Excluir Veículo
-4 - Pesquisar Veículo
-0 - Sair
+ - 1 - Cadastrar Veículo
+ - 2 - Listar Veículos
+ - 3 - Excluir Veículo
+ - 4 - Pesquisar Veículo
+ - 0 - Sair
 
 ---
 
@@ -47,6 +47,3 @@ Quando roda o programa, aparece o menu:
 ## Integrantes
 - Maria Luiza Pereto - 113867 
 - Jamile Rockenbach Ferreira - 1137704
-
-
-

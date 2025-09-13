@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CadastroVeiuculos {
+public class CadastroVeiculos {
     static Scanner scan = new Scanner(System.in);
-    static List<Veiculos> veiculos = new ArrayList<>();
+    static List<Veiculo> veiculos = new ArrayList<>();
 
     public static void main(String[] args) {
         System.out.println("==== Bem Vindo ao Controle de Frotas das Divas ! ====");
@@ -60,14 +60,14 @@ public class CadastroVeiuculos {
         String placa = Input.scanString("Digite a placa: ", scan);
 
         // Verifica duplicidade da placa
-        for (Veiculos v : veiculos) {
+        for (Veiculo v : veiculos) {
             if (v.getPlaca().equalsIgnoreCase(placa)) {
                 System.out.println("Erro: Já existe um veículo com esta placa!");
                 return;
             }
         }
 
-        Veiculos v = new Veiculos(marca, modelo, ano, placa);
+        Veiculo v = new Veiculo(marca, modelo, ano, placa);
         veiculos.add(v);
         System.out.println("Veículo cadastrado com sucesso!");
     }
@@ -79,7 +79,7 @@ public class CadastroVeiuculos {
             System.out.println("Nenhum veículo cadastrado.");
             return;
         }
-        for (Veiculos veiculo : veiculos) {
+        for (Veiculo veiculo : veiculos) {
             System.out.println(veiculo);
         }
     }
@@ -88,8 +88,8 @@ public class CadastroVeiuculos {
         System.out.println("==== Remover Veículo ====");
         String placa = Input.scanString("Digite a placa do veículo a remover: ", scan);
 
-        Veiculos encontrado = null;
-        for (Veiculos v : veiculos) {
+        Veiculo encontrado = null;
+        for (Veiculo v : veiculos) {
             if (v.getPlaca().equalsIgnoreCase(placa)) {
                 encontrado = v;
                 break;
@@ -112,10 +112,10 @@ public class CadastroVeiuculos {
         int tipo = Input.scanInt("Escolha uma opção: ", scan);
 
         switch (tipo) {
-            case 1 -> {
+            case 1: {
                 String placa = Input.scanString("Digite a placa: ", scan);
                 boolean achou = false;
-                for (Veiculos v : veiculos) {
+                for (Veiculo v : veiculos) {
                     if (v.getPlaca().equalsIgnoreCase(placa)) {
                         System.out.println(v);
                         achou = true;
@@ -123,10 +123,11 @@ public class CadastroVeiuculos {
                 }
                 if (!achou) System.out.println("Nenhum veículo encontrado com essa placa.");
             }
-            case 2 -> {
+                break;
+            case 2: {
                 String modelo = Input.scanString("Digite parte do modelo: ", scan);
                 boolean achou = false;
-                for (Veiculos v : veiculos) {
+                for (Veiculo v : veiculos) {
                     if (v.getModelo().toLowerCase().contains(modelo.toLowerCase())) {
                         System.out.println(v);
                         achou = true;
@@ -134,7 +135,8 @@ public class CadastroVeiuculos {
                 }
                 if (!achou) System.out.println("Nenhum veículo encontrado com esse modelo.");
             }
-            default -> System.out.println("Opção inválida.");
+                break;
+            default: System.out.println("Opção inválida.");
         }
     }
 
